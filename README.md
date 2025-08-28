@@ -24,11 +24,11 @@ and cut/paste the token. This will allow you to download the weights of the mode
 ### CodeLlama-7B
 From the root of the repository, execute the following to download the model:
 ```
-huggingface-cli download codellama/CodeLlama-7b-Python-hf --local-dir ./models/CodeLlama-7b-Python
+hf download codellama/CodeLlama-7b-Python-hf --local-dir ./models/CodeLlama-7b-Python
 ```
 
 ### DeepSeek-Coder-V2
 From the root of the repository, execute the following to download the model:
 ```
-huggingface-cli download deepseek-ai/DeepSeek-Coder-V2-16B-base --local-dir ./models/DeepSeek-Coder-V2-16B
+hf download deepseek-ai/DeepSeek-Coder-V2-16B-base --local-dir ./models/DeepSeek-Coder-V2-16B
 ```
