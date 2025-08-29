@@ -49,7 +49,11 @@ if __name__ == "__main__":
     )
 
     # Example prompt
-    prompt = """# Write a Python function that computes the Fibonacci sequence up to n."""
+    prompt = """
+# Write a Python script that given the following input matrices, transforms them into output matrices.
+# The matrices represents a grid of cells of different colors, describing 2D shapes."""
+    prompt = """# Write a Python function that computes the Fibonacci sequence up to n.
+"""
 
     # Tokenize input
     inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
@@ -57,8 +61,8 @@ if __name__ == "__main__":
     # Get ids of all tokens in the input window
     context_ids = inputs['input_ids']
 
+    # Generate tokens one by one, until we hit the end-of-sequence token
     next_token = None
-    
     while next_token != tokenizer.eos_token_id:
         next_token = generate_token(model, context_ids, prng)
         next_token_tensor = torch.tensor([[next_token]], device=model.device)
@@ -67,5 +71,5 @@ if __name__ == "__main__":
         print("Current output: " + tokenizer.decode(context_ids[0], skip_special_tokens=True))
         print("---")
 
-    # seed the random number generator
-    prng = np.random.default_rng(seed=42)
+    # TODO attempt to execute the output as a Python script
+    # TODO compare with an expected output, if available

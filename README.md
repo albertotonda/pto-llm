@@ -1,7 +1,7 @@
 # PTO+LLMs
 Preliminary experiments using Program Trace Optimization (PTO) + Large Language Models (LLMs).
 
-## Installation
+## Installing LLMs from HuggingFace
 This project requires a few tweaks, to install and use a small LLM locally. We recommend creating a new Python environment from scratch. For example, using Anaconda under Windows 10:
 ```
 conda create -n ptollm python=3.10 -y
@@ -30,5 +30,19 @@ hf download codellama/CodeLlama-7b-Python-hf --local-dir ./models/CodeLlama-7b-P
 ### DeepSeek-Coder-V2
 From the root of the repository, execute the following to download the model:
 ```
-hf download deepseek-ai/DeepSeek-Coder-V2-16B-base --local-dir ./models/DeepSeek-Coder-V2-16B
+hf download deepseek-ai/DeepSeek-Coder-V2-Lite-Base --local-dir ./models/DeepSeek-Coder-V2-Lite-Base
 ```
+
+### Checking the models
+Once you complete the installation of the models, you can check them by running the script
+```
+python3 src/test_llm_models.py
+```
+
+## Installing ARC files
+First create a subdirectory called `data/` from the root. You can then clone the following GitHub repositories inside the `data/` subdirectory
+```
+git clone https://github.com/michaelhodel/arc-dsl data/arc-dsl
+git clone https://github.com/fchollet/ARC-AGI data/arc-agi-1
+```
+The first repository contains all examples from the ARC-AGI-1 benchmark, used up to the 2024 competition and later replaced by ARC-AGI-2.
