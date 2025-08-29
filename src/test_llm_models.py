@@ -15,7 +15,7 @@ if __name__ == "__main__":
     quantization_config = None
     device_map = "auto"
 
-    if "DeepSeek" in model_path:
+    if False and "DeepSeek" in model_path:
         print("Loading DeepSeek model, using 8-bit quantization and forcing everything on GPU...")
         quantization_config = BitsAndBytesConfig(
             load_in_8bit=True,
